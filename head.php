@@ -4,7 +4,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Application Template - Stand up apps fast</title>
+    <title>Demo Site - Web Media Concepts</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,4 +27,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+    <style>
+        
+    </style>
 </head>

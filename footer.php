@@ -30,7 +30,7 @@
         }
         ?>
 
-        <p class="text-muted small mb-0">Copyright &copy; Application Template <?php echo date("Y"); ?></p>
+        <p class="text-muted small mb-0">Copyright &copy; Demo Site - Web Media Concepts <?php echo date("Y"); ?></p>
         <br>
     </div>
 </footer>
