@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.php">Application Template</a>
+        <a class="navbar-brand" href="index.php">Web Media Concepts Demo Site</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +36,6 @@
                         <a class="dropdown-item" href="portfolio-2-col.php">2 Column Portfolio</a>
                         <a class="dropdown-item" href="portfolio-3-col.php">3 Column Portfolio</a>
                         <a class="dropdown-item" href="portfolio-4-col.php">4 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-item.php">Single Portfolio Item</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -47,7 +46,6 @@
                         <a class="dropdown-item" href="full-width.php">Full Width Page</a>
                         <a class="dropdown-item" href="sidebar.php">Sidebar Page</a>
                         <a class="dropdown-item" href="faq.php">FAQ</a>
-                        <a class="dropdown-item" href="404.php">404</a>
                         <a class="dropdown-item" href="pricing.php">Pricing Table</a>
                     </div>
                 </li>

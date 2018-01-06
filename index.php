@@ -1,5 +1,7 @@
 <?php
     include_once ("classes.php");
+$mailSent = false;
+$errors = "";
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Template</title>
+    <title>Web Media Concepts</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +50,7 @@
     <nav id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+          <a class="js-scroll-trigger" href="#page-top">Web Media Concepts</a>
         </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#page-top">Home</a>
@@ -71,9 +73,9 @@
     <!-- Header -->
     <header class="masthead d-flex">
       <div class="container text-center my-auto text-white">
-        <h1 class="mb-1">Stylish Portfolio</h1>
+        <h1 class="mb-1">Web Media Concepts</h1>
         <h3 class="mb-5">
-          <em>A Free Bootstrap Theme by Start Bootstrap</em>
+          <em>Professional Web Development &middot; We Help You Get Found On Google &middot; 24/7 Ecommerce Support</em>
         </h3>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
       </div>
@@ -85,9 +87,10 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-            <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-              <a href="https://unsplash.com/">Unsplash</a>!</p>
+            <h2>A website serves as an online identity for a business!</h2>
+            <p class="lead mb-5">
+
+            </p>
             <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
           </div>
         </div>
@@ -102,6 +105,15 @@
           <h2 class="mb-5">What We Offer</h2>
         </div>
         <div class="row">
+            <div class="col-lg-3 col-md-6">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-mustache"></i>
+            </span>
+                <h4>
+                    <strong>Branding</strong>
+                </h4>
+                <p class="text-faded mb-0">A website serves as an online identity for a business. Let us build an online presence to attract your perfect customer.</p>
+            </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
               <i class="icon-screen-smartphone"></i>
@@ -109,36 +121,31 @@
             <h4>
               <strong>Responsive</strong>
             </h4>
-            <p class="text-faded mb-0">Looks great on any screen size!</p>
+            <p class="text-faded mb-0">
+                Our modern and professional web development standards ensure your website will scale flawlessly across all screen types and sizes.
+            </p>
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
               <i class="icon-pencil"></i>
             </span>
             <h4>
-              <strong>Redesigned</strong>
+              <strong>Analytics & SEO</strong>
             </h4>
-            <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+            <p class="text-faded mb-0">
+                The best way to generate online leads for any business is through organized online marketing strategies.
+            </p>
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
               <i class="icon-like"></i>
             </span>
             <h4>
-              <strong>Favorited</strong>
+              <strong>Ecommerce Mangement</strong>
             </h4>
-            <p class="text-faded mb-0">Millions of users
-              <i class="fa fa-heart"></i>
-              Start Bootstrap!</p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-            <h4>
-              <strong>Question</strong>
-            </h4>
-            <p class="text-faded mb-0">I mustache you a question...</p>
+            <p class="text-faded mb-0">
+                Let Us handle the day-to-day website maintenance so you can focus on your next big move.
+            </p>
           </div>
         </div>
       </div>
@@ -190,18 +197,67 @@
     <section class="content-section bg-primary text-white">
       <div class="container text-center">
         <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-        <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+        <a href="#contact" class="btn btn-xl btn-light mr-4">Contact Us!</a>
+        <a href="home.php" class="btn btn-xl btn-dark">Look at Me!</a>
       </div>
     </section>
 
     <!-- Map -->
-    <section id="contact" class="map">
+    <section id="contact">
+        <div class="container text-center content-section">
+            <div class="offset-md-3 col-md-6">
+                <h2 class="mb-4">Send us a Message</h2>
+                <form name="contactForm" id="contactForm" method="post">
+                    <?php if ($errors != ""){
+                        echo "<div id=\"failure\"><div class=\"alert alert-danger\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button><strong>" . $errors . "</strong></div></div>";
+                    }
+                    ?>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required
+                                   data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Phone Number:</label><small> (optional)</small>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email Address:</label>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                   data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Message:</label>
+                            <textarea rows="10" cols="100" class="form-control" id="message" name="message" required
+                                      data-validation-required-message="Please enter your message" maxlength="999"
+                                      style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+
+                    <?php if ($mailSent): ?>
+                        <div id="success"><div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><strong>Your message has been sent. </strong></div></div>
+                    <?php endif ?>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <!--
       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
       <br/>
       <small>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
       </small>
+      -->
     </section>
 
     <!-- Footer -->

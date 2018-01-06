@@ -36,7 +36,7 @@ h6 {
 .text-faded {
   color: rgba(255, 255, 255, 0.7); }
 
-/* Map */
+/* Map
 .map {
   height: 30rem; }
 
@@ -46,7 +46,7 @@ h6 {
 
 .map iframe {
   pointer-events: none; }
-
+*/
 .scroll-to-top {
   position: fixed;
   right: 15px;
