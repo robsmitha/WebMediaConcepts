@@ -59,7 +59,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
-    <style>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110090520-3"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-110090520-3');
+      </script>
+
+      <style>
 
         .text-shadow-1{
             text-shadow: 1px 1px 1px #000;
@@ -105,8 +115,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <h3 class="mb-5 text-shadow-1">
           <em>We Build Professional Websites</em>
         </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-          <a class="btn btn-dark btn-xl" href="home.php">Demo site</a>
+          <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3 mt-2">
+                  <a class="btn btn-primary btn-xl js-scroll-trigger btn-block" href="#about">Find Out More</a>
+              </div>
+              <div class="col-sm-3 mt-2">
+                  <a class="btn btn-dark btn-xl btn-block" href="home.php">Demo site</a>
+              </div>
+          </div>
+
+
       </div>
       <div class="overlay"></div>
     </header>
@@ -134,12 +153,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
           <h2 class="mb-5">What We Offer</h2>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
+              <i class="icon-screen-desktop"></i>
             </span>
                 <h4>
-                    <strong>Branding</strong>
+                    <strong>Online Branding</strong>
                 </h4>
                 <p class="text-faded mb-0">A website serves as an online identity for a business. Let us build an online presence to attract your perfect customer.</p>
             </div>
@@ -156,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
+              <i class="icon-graph"></i>
             </span>
             <h4>
               <strong>Analytics & SEO</strong>
@@ -165,9 +184,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 The best way to generate online leads for any business is through organized online marketing strategies.
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <div class="col-lg-3 col-md-6">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
+              <i class="icon-basket"></i>
             </span>
             <h4>
               <strong>Ecommerce Mangement</strong>
@@ -207,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="caption">
                                 <span class="caption-content">
                                   <h2><?php echo $portfolioitem->getName() ?></h2>
-                                  <p class="mb-0"><?php echo $portfolioitem->getDescription() ?></p>
+                                  <p class="mb-0 d-none"><?php echo $portfolioitem->getDescription() ?></p>
                                 </span>
                             </span>
                             <img class="img-fluid" src="<?php echo $portfolioitem->getImageUrl() ?>" alt="">
@@ -225,8 +244,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <section class="content-section bg-primary text-white">
       <div class="container text-center">
         <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-          <a href="#contact" class="js-scroll-trigger btn btn-xl btn-light mr-4">Contact Us!</a>
-        <a href="home.php" class="btn btn-xl btn-dark">Look at Me!</a>
+          <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3 mt-2">
+                  <a href="#contact" class="js-scroll-trigger btn btn-xl btn-light mr-4 btn-block">Contact Us!</a>
+              </div>
+              <div class="col-sm-3 mt-2">
+                  <a href="home.php" class="btn btn-xl btn-dark btn-block">Look at Me!</a>
+              </div>
+          </div>
+
+
       </div>
     </section>
 

@@ -17,7 +17,7 @@ $securityuserid = SessionManager::getSecurityUserId();
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3 d-none d-sm-block">Events
+    <h1 class="mt-4 mb-3">Events
         <small>Keep in touch with your customers!</small>
         <?php
         if($securityuserid > 0){

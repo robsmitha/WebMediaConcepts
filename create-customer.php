@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $customer = Customer::lookup($email);
         if ($customer != null) {
             // This email is already taken
-            $errorMessage = "The provided email is already in use. Please try another email.";
+            $validationMsg = "The provided email is already in use. Please try another email.";
         }
         else {
             $currentDate = date('Y-m-d H:i:s');

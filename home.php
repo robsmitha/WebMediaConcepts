@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
-            <h4 class="card-header"><i class="icon-speedometer"></i> Professional Web Development</h4>
+            <h4 class="card-header"><i class="icon-screen-desktop"></i> Professional Web Development</h4>
             <div class="card-body">
               <p class="card-text">
                   A website serves as an online identitiy for a business. Our modern and professional web development standards ensure your website will scale flawlessly across all screen types and sizes.
@@ -74,7 +74,7 @@
         </div>
           <div class="col-lg-4 mb-4">
               <div class="card h-100">
-                  <h4 class="card-header"><i class="icon-key"></i> We Help You Get Found On Google</h4>
+                  <h4 class="card-header"><i class="icon-magnifier"></i> We Help You Get Found On Google</h4>
                   <div class="card-body">
                       <p class="card-text">The best way to generate online leads for any business is through organized online marketing strategies. We implement effective SEO techniques that attract more online customers.</p>
                   </div>
@@ -85,7 +85,7 @@
           </div>
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
-            <h4 class="card-header"><i class="icon-graph"></i> 24/7 Ecommerce Support</h4>
+            <h4 class="card-header"><i class="icon-clock"></i> 24/7 Ecommerce Support</h4>
             <div class="card-body">
               <p class="card-text">Let's face it, the business of buying and selling has largely been moved online. Let Us handle the day-to-day website maintenance so you can focus on your next big move.</p>
             </div>
@@ -103,13 +103,13 @@
           <h2>Demo Website Features</h2>
           <p>The Web Media Concepts Demo Site includes:</p>
           <ul>
-            <li>
-              <strong>Online Shop</strong>
+            <li><a href="shop-home.php">
+              <strong>Online Shop</strong></a>
             </li>
-              <li>Blog</li>
-              <li>Galley</li>
-              <li>Portfolio</li>
-              <li>Administration</li>
+              <li><a href="blog-home.php">Blog</a></li>
+              <li><a href="gallery.php">Galley</a></li>
+              <li><a href="portfolio-3-col.php">Portfolio</a></li>
+              <li><a href="event-home.php">Events</a></li>
 
           </ul>
           <p>

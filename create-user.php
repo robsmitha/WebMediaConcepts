@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $securityuser = Securityuser::lookup($username);
         if ($securityuser != null) {
             // This email is already taken
-            $errorMessage = "The provided username is already in use. Please try another username.";
+            $validationMsg = "The provided username is already in use. Please try another username.";
         }
         else {
             $currentDate = date('Y-m-d H:i:s');

@@ -53,7 +53,7 @@ $eventCommentList = Eventcomment::loadbyeventid($event->getId());
 <!-- Page Content -->
 <div class="container">
 
-    <h1 class="mt-4 mb-3 d-none d-sm-block"><?php echo nl2br($event->getName()) ?></h1>
+    <h1 class="mt-4 mb-3"><?php echo nl2br($event->getName()) ?></h1>
 
 
     <ol class="breadcrumb">

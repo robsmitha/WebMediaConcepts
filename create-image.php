@@ -86,7 +86,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
                         </div>
                         <div class="form-group">
                             <label for="imgurl">Image Url</label>
-                            <input class="form-control" id="imgurl" name="imgurl" type="text" placeholder="Image Url" value="<?php if(isset($image)) echo $image->getImgUrl() ?>">
+                            <br>
+                            <!--<input class="form-control" id="imgurl" name="imgurl" type="text" placeholder="Image Url" value="<?php if(isset($image)) echo $image->getImgUrl() ?>">-->
+
+                            <?php include_once ("Utilities/uploader/upload.php") ?>
                         </div>
                         <div class="form-group">
                             <label for="eventid">Event</label>

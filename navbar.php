@@ -57,19 +57,8 @@
             <ul class="navbar-nav ml-auto">
                 <?php if(SessionManager::getSecurityUserId() > 0 ) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Administration
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAdmin">
-                            <a class="dropdown-item" href="admin-home.php">Admin Home</a>
-                            <a class="dropdown-item" href="create-blog.php">Create Blog</a>
-                            <a class="dropdown-item" href="create-item.php">Create Item</a>
-                            <a class="dropdown-item" href="create-user.php">Create User</a>
-                            <a class="dropdown-item" href="create-image.php">Create Image</a>
-                            <a class="dropdown-item" href="create-event.php">Create Event</a>
-                            <a class="dropdown-item" href="create-portfolioitem.php">Create Portfolio Item</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-home.php">Administration</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>

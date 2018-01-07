@@ -29,7 +29,7 @@ if($cart != null){
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card mt-4">
                 <div class="card-header">
                     My Cart
                 </div>

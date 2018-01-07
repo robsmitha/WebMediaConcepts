@@ -23,7 +23,7 @@ $amount = Onlinecart::calculatetotal($cart->getId())."00";
 $cart->setCartStatusTypeId(2);  //inactive cart
 $cart->setCheckoutDate($currentDate);
 $cart->save();
-
+/*
 $customer = \Stripe\Customer::create(array(
     'email' => $email,
     'source'  => $token
@@ -43,15 +43,18 @@ $stripeamount =  $charge->amount;     //charge amt we will store
 $status = $charge->status;  //if succeeded or not
 
 //pull these fields from card
-/*
+
 $brand = $card->brand;    //brand
 $exp_month = $card->exp_month;    //exp month
 $exp_year = $card->exp_year;  //exp yeat
 $last4 = $card->last4;    //last 4
 $brand = $card->brand; //brand (VISA)
 */
+$stripecharge = null;
+$stripecustomer = null;
+$stripecard = null;
 //make order
-$order = new Order(0,$custlookup->getId(),1,$currentDate,$stripecharge,$stripecustomer,$stripecard,$stripeamount);
+$order = new Order(0,$custlookup->getId(),1,$currentDate,$stripecharge,$stripecustomer,$stripecard,$amount);
 $order->save();
 
 $cartItemList = Cartitem::loadbycartid($cart->getId());

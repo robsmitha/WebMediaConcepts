@@ -1,5 +1,6 @@
 <?php include "classes.php" ?>
 <?php
+$securityUserId = SessionManager::getSecurityUserId();
 $customerId = SessionManager::getCustomerId();
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] > 0){
@@ -31,9 +32,24 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">
-            <?php echo $portfolioitem->getName(); ?>
-        </h1>
+        <div class="row">
+            <div class="col-sm-9">
+                <h1 class="mt-4 mb-3">
+                    <?php echo $portfolioitem->getName(); ?>
+                </h1>
+            </div>
+            <div class="col-sm-3">
+                <?php
+                if($securityUserId > 0){
+                    ?>
+                    <br>
+                    <a href="create-portfolioitem.php?cmd=edit&id=<?php echo $portfolioitem->getId(); ?>" class="btn btn-danger btn-block">Edit</a>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
