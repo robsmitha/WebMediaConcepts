@@ -68,7 +68,7 @@
 
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">See Our Projects</a>
+              <a href="portfolio-3-col.php" class="btn btn-primary">See Our Projects</a>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
                       <p class="card-text">The best way to generate online leads for any business is through organized online marketing strategies. We implement effective SEO techniques that attract more online customers.</p>
                   </div>
                   <div class="card-footer">
-                      <a href="#" class="btn btn-primary">Learn More</a>
+                      <a href="services.php" class="btn btn-primary">Learn More</a>
                   </div>
               </div>
           </div>
@@ -90,7 +90,7 @@
               <p class="card-text">Let's face it, the business of buying and selling has largely been moved online. Let Us handle the day-to-day website maintenance so you can focus on your next big move.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Shop Demo</a>
+              <a href="shop-home.php" class="btn btn-primary">Shop Demo</a>
             </div>
           </div>
         </div>
@@ -100,21 +100,28 @@
       <!-- Features Section -->
       <div class="row">
         <div class="col-lg-6">
-          <h2>Application Template Features</h2>
-          <p>The Modern Business template by Start Bootstrap includes:</p>
+          <h2>Demo Website Features</h2>
+          <p>The Web Media Concepts Demo Site includes:</p>
           <ul>
             <li>
-              <strong>Bootstrap v4</strong>
+              <strong>Online Shop</strong>
             </li>
-            <li>jQuery</li>
-            <li>Font Awesome</li>
-            <li>Working contact form with validation</li>
-            <li>Unstyled page elements for easy customization</li>
+              <li>Blog</li>
+              <li>Galley</li>
+              <li>Portfolio</li>
+              <li>Administration</li>
+
           </ul>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+          <p>
+              We implement the features listed above along with other custom functionality to suite any client needs.
+
+
+
+              The final price depends on the websites needs and total development costs. You can get an idea of our pricing by <a href="pricing.php">clicking here.</a>
+          </p>
         </div>
         <div class="col-lg-6">
-          <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+          <img class="img-fluid rounded" src="img/750x450.jpg" alt="">
         </div>
       </div>
       <!-- /.row -->

@@ -216,7 +216,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     Product Reviews
                 </div>
                 <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+                    <h4>Coming Soon!</h4>
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
                     <small class="text-muted">Posted by Anonymous on 3/1/17</small>
                     <hr>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
@@ -225,7 +226,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
                     <small class="text-muted">Posted by Anonymous on 3/1/17</small>
                     <hr>
-                    <a href="#" class="btn btn-success">Leave a Review</a>
+                    <a href="#" class="btn btn-success">Leave a Review</a>-->
                 </div>
             </div>
             <!-- /.card -->

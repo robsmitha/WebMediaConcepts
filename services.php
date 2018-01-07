@@ -14,7 +14,7 @@
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">Services
-        <small>Subheading</small>
+        <small>What We Do</small>
       </h1>
 
       <ol class="breadcrumb">
@@ -25,7 +25,7 @@
       </ol>
 
       <!-- Image Header -->
-      <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
+      <img class="img-fluid rounded mb-4" src="img/1200x300.jpg" alt="">
 
         <!-- Marketing Icons Section -->
         <div class="row">

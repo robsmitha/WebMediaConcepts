@@ -7,6 +7,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="home.php">Home</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
@@ -46,6 +49,7 @@
                         <a class="dropdown-item" href="full-width.php">Full Width Page</a>
                         <a class="dropdown-item" href="sidebar.php">Sidebar Page</a>
                         <a class="dropdown-item" href="faq.php">FAQ</a>
+                        <a class="dropdown-item" href="404.php">404</a>
                         <a class="dropdown-item" href="pricing.php">Pricing Table</a>
                     </div>
                 </li>
@@ -64,6 +68,7 @@
                             <a class="dropdown-item" href="create-user.php">Create User</a>
                             <a class="dropdown-item" href="create-image.php">Create Image</a>
                             <a class="dropdown-item" href="create-event.php">Create Event</a>
+                            <a class="dropdown-item" href="create-portfolioitem.php">Create Portfolio Item</a>
                         </div>
                     </li>
                     <li class="nav-item">

@@ -51,7 +51,12 @@ $blogCommentList = Blogcomment::loadbyblogid($blog->getId());
       <h1 class="mt-4 mb-3">
           <?php echo $blog->getTitle() ?>
         <small>by
-          <a href="#"><?php echo $blog->getSecurityUserId() ?></a>
+          <a href="#">
+              <?php
+              $user = new Securityuser($blog->getSecurityUserId());
+              echo  $user->getUsername();
+              ?>
+          </a>
         </small>
       </h1>
 
@@ -178,7 +183,7 @@ $blogCommentList = Blogcomment::loadbyblogid($blog->getId());
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
-          <!-- Search Widget -->
+          <!-- Search Widget
           <div class="card mb-4">
             <h5 class="card-header">Search</h5>
             <div class="card-body">
@@ -189,7 +194,7 @@ $blogCommentList = Blogcomment::loadbyblogid($blog->getId());
                 </span>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Categories Widget -->
           <div class="card my-4">

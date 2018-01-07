@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">Blog Home One
-        <small>Subheading</small>
+        <!--<small>Subheading</small>-->
       </h1>
 
       <ol class="breadcrumb">
@@ -47,8 +47,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
                             <a href="blog-post.php?id=<?php echo $b->getId() ?>" class="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div class="card-footer text-muted">
-                            Posted on <?php echo $b->getCreateDate() ?> by
-                            <a href="#"><?php echo $b->getSecurityUserId() ?></a>
+                            Posted on <?php echo date_format(date_create($b->getCreateDate()), 'g:ia \o\n l jS F Y') ?> by
+                            <a href="#"><?php
+                                $user = new Securityuser($b->getSecurityUserId());
+                                echo $user->getUsername() ?></a>
                         </div>
                     </div>
             <?php
@@ -71,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
-          <!-- Search Widget -->
+          <!-- Search Widget
           <div class="card mb-4">
             <h5 class="card-header">Search</h5>
             <div class="card-body">
@@ -82,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
                 </span>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <!-- Categories Widget -->
           <div class="card my-4">

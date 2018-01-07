@@ -1,7 +1,38 @@
 <?php
     include_once ("classes.php");
-$mailSent = false;
 $errors = "";
+$mailSent = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    // Check for empty fields
+    if(empty($_POST['name'])      ||
+        empty($_POST['email'])     ||
+        empty($_POST['phone'])     ||
+        empty($_POST['message'])   ||
+        !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+    {
+        $errors = "Please complete all required fields to send an email.";
+        return false;
+    }
+    else{
+        $name = strip_tags(htmlspecialchars($_POST['name']));
+        $email_address = strip_tags(htmlspecialchars($_POST['email']));
+        $phone = strip_tags(htmlspecialchars($_POST['phone']));
+        $message = strip_tags(htmlspecialchars($_POST['message']));
+
+        // Create the email and send the message
+        $email_subject = "Website Contact Form:  $name";
+        $email_body = "You have received a new message from your website contact form.<br/><br/>"."Here are the details:<br/><br/>Name: $name<br/><br/>Email: $email_address<br/><br/>Phone: $phone<br/><br/>Message:<br/>$message";
+        if($name != "" && $email_address != "" && $message != ""){
+            $mailSent = true;
+            Mailer::sendContactEmail($email_address,$email_subject,$email_body);
+        }
+        else{
+            $mailSent = false;
+        }
+    }
+}
 //echo phpinfo();
 ?>
 
@@ -27,18 +58,14 @@ $errors = "";
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
     <style>
-        .masthead {
-            background: url(img/bg-masthead.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+
+        .text-shadow-1{
+            text-shadow: 1px 1px 1px #000;
         }
-        .callout {
-            background: url(img/bg-callout.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .text-shadow-2{
+            text-shadow: 2px 2px 2px #000;
         }
     </style>
   </head>
@@ -74,11 +101,12 @@ $errors = "";
     <!-- Header -->
     <header class="masthead d-flex">
       <div class="container text-center my-auto text-white">
-        <h1 class="mb-1">Web Media Concepts</h1>
-        <h3 class="mb-5">
-          <em>Professional Web Development &middot; We Help You Get Found On Google &middot; 24/7 Ecommerce Support</em>
+        <h1 class="mb-1 text-shadow-2">Web Media Concepts</h1>
+        <h3 class="mb-5 text-shadow-1">
+          <em>We Build Professional Websites</em>
         </h3>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          <a class="btn btn-dark btn-xl" href="home.php">Demo site</a>
       </div>
       <div class="overlay"></div>
     </header>
@@ -155,9 +183,8 @@ $errors = "";
     <!-- Callout -->
     <section class="callout">
       <div class="container text-center text-white">
-        <h2 class="mx-auto mb-5">Welcome to
-          <em>your</em>
-          next website!</h2>
+        <h2 class="mx-auto mb-5 text-shadow-1"> Check out our
+          <em>demo website</em>!</h2>
         <a class="btn btn-primary btn-xl" href="home.php">Demo site</a>
       </div>
     </section>
@@ -266,22 +293,22 @@ $errors = "";
       <div class="container">
         <ul class="list-inline mb-5">
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
+            <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/webmediaconcepts/">
               <i class="icon-social-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
+            <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/RobSmitha">
               <i class="icon-social-twitter"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="#">
+            <a class="social-link rounded-circle text-white" href="https://github.com/robsmitha">
               <i class="icon-social-github"></i>
             </a>
           </li>
         </ul>
-        <p class="text-muted small mb-0">Copyright &copy; Your Website 2017</p>
+          <p class="text-muted small mb-0">Copyright &copy; Web Media Concepts <?php echo date("Y"); ?></p>
       </div>
     </footer>
 

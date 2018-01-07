@@ -1251,7 +1251,7 @@ Email VARCHAR(255),
 RoleId INT,
 CreateDate DATETIME,
 CONSTRAINT pk_securityuser_Id PRIMARY KEY (Id),
-CONSTRAINT fk_securityuser_RoleId_Role_Id FOREIGN KEY (RoleId) REFERENCES Role (Id)
+CONSTRAINT fk_securityuser_RoleId_Role_Id FOREIGN KEY (RoleId) REFERENCES role (Id)
 );
 
 
@@ -4225,5 +4225,46 @@ BEGIN
 		`portfolioitem`.`CreateDate` AS `CreateDate`
 	FROM `portfolioitem`
 	WHERE 		`portfolioitem`.`PortfolioCategoryId` = paramPortfolioCategoryId;
+END //
+DELIMITER ;
+
+use applicationtemplate;
+DELIMITER //
+CREATE PROCEDURE `applicationtemplate`.`usp_image_LoadByEventId`
+(
+	 IN paramId INT
+)
+BEGIN
+	SELECT
+		`image`.`Id` AS `Id`,
+		`image`.`Name` AS `Name`,
+		`image`.`Description` AS `Description`,
+		`image`.`ImgUrl` AS `ImgUrl`,
+		`image`.`EventId` AS `EventId`,
+		`image`.`Views` AS `Views`,
+		`image`.`IsFeaturedImage` AS `IsFeaturedImage`
+	FROM `image`
+	WHERE 		`image`.`EventId` = paramId;
+END //
+DELIMITER ;
+
+use applicationtemplate;
+DELIMITER //
+CREATE PROCEDURE `applicationtemplate`.`usp_cartitem_LoadByCartId`
+(
+	 IN paramCartId INT
+)
+BEGIN
+	SELECT
+		`cartitem`.`Id` AS `Id`,
+		`cartitem`.`CartId` AS `CartId`,
+		`cartitem`.`ItemId` AS `ItemId`,
+		`cartitem`.`AddDate` AS `AddDate`,
+		`cartitem`.`Quantity` AS `Quantity`,
+		`cartitem`.`ItemStartDate` AS `ItemStartDate`,
+		`cartitem`.`ItemEndDate` AS `ItemEndDate`,
+		`cartitem`.`ItemTypeId` AS `ItemTypeId`
+	FROM `cartitem`
+	WHERE 		`cartitem`.`CartId` = paramCartId;
 END //
 DELIMITER ;

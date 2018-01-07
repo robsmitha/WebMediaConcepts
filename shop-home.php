@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
         <div class="col-lg-9">
 
-            <div id="carouselExampleIndicators" class="carousel slide mt-4" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide mt-4 d-none" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

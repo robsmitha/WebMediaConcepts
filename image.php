@@ -10,10 +10,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header("location: gallery.php");
         }
     }
-    $returnVal = true;
+    if(isset($_POST["btnDeleteComment"])){
+        if(is_numeric($_POST["btnDeleteComment"])){
+            Imagecomment::remove($_POST["btnDeleteComment"]);
+            header("location: image.php?id=".$_POST["hfImageId"]);
+        }
+    }
     if(isset($_POST["btnPostComment"])){
+        $returnVal = true;
         isset($_POST["comment"]) && $_POST["comment"] != "" ? $comment = $_POST["comment"] : $returnVal = false;
-        isset($_POST["hfImageId"]) && $_POST["hfImageId"] != "" ? $imageid = $_POST["hfImageId"] : $returnVal = false;
+        isset($_POST["btnPostComment"]) ? $imageid = $_POST["btnPostComment"] : $returnVal = false;
         $currentDate = date('Y-m-d H:i:s');
         if($returnVal){
             $imagecomment = new Imagecomment(0,$comment,$customerId,1,$imageid,$currentDate, null);
@@ -133,7 +139,7 @@ $event = new Event($image->getEventId());
                             if($securityuserid > 0 || $customerId == $imagecomment->getCustomerId()){
                                 ?>
                                 <form method="post">
-                                    <input type="hidden" name="hfEventId" value="<?php echo $event->getId() ?>">
+                                    <input type="hidden" name="hfImageId" value="<?php echo $image->getId() ?>">
                                     <button type="submit" name="btnDeleteComment" value="<?php echo $imagecomment->getId() ?>" class="btn btn-outline-danger pull-right">Delete</button>
                                 </form>
                                 <?php
@@ -157,8 +163,7 @@ $event = new Event($image->getEventId());
                     <div class="form-group">
                         <textarea name="comment" class="form-control" rows="3" required></textarea>
                     </div>
-                    <button name="btnPostComment" id="btnPostComment" type="submit" class="btn btn-primary">Submit</button>
-                    <input type="hidden" name="hfEventId" value="<?php echo $event->getId() ?>">
+                    <button name="btnPostComment" id="btnPostComment" type="submit" class="btn btn-primary" value="<?php echo $image->getId() ?>">Submit</button>
                 </form>
                 <?php
             }

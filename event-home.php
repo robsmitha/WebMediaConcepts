@@ -18,7 +18,7 @@ $securityuserid = SessionManager::getSecurityUserId();
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3 d-none d-sm-block">Events
-        <small>Cory's Latest Shows!</small>
+        <small>Keep in touch with your customers!</small>
         <?php
         if($securityuserid > 0){
             ?>
